@@ -32,7 +32,7 @@ class UserController extends Controller
             $em = $this->getDoctrine()->getManager();
             $password = $this->get('security.password_encoder')->encodePassword($user, $user->getPassword());
             $user->setPassword($password);
-
+            $user->setRoles($request->request->get('user')['roles']);
             $em->persist($user);
             $em->flush();
 
@@ -56,6 +56,8 @@ class UserController extends Controller
         if (true === $form->isSubmitted() && true === $form->isValid()) {
             $password = $this->get('security.password_encoder')->encodePassword($user, $user->getPassword());
             $user->setPassword($password);
+            // $user->setRoles([]);
+            $user->setRoles([$request->request->get('user')['roles']]);
 
             $this->getDoctrine()->getManager()->flush();
 

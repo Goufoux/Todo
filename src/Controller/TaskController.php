@@ -30,7 +30,7 @@ class TaskController extends Controller
 
         if (true === $form->isSubmitted() && true === $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-
+            $task->setAuthor($this->getUser());
             $em->persist($task);
             $em->flush();
 
