@@ -13,6 +13,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  * @ORM\Table("user")
  * @ORM\Entity
  * @UniqueEntity("email")
+ * @UniqueEntity("username")
  */
 class User implements UserInterface
 {
@@ -45,6 +46,11 @@ class User implements UserInterface
      * @ORM\OneToMany(targetEntity="App\Entity\Task", mappedBy="author")
      */
     private $tasks;
+
+    /**
+     * @ORM\Column(type="array", nullable=true)
+     */
+    private $roles = [];
 
     public function __construct()
     {
@@ -93,7 +99,9 @@ class User implements UserInterface
 
     public function getRoles()
     {
-        return array('ROLE_USER');
+        $roles = $this->roles;
+        
+        return $roles;
     }
 
     public function eraseCredentials()
@@ -127,6 +135,18 @@ class User implements UserInterface
                 $task->setAuthor(null);
             }
         }
+
+        return $this;
+    }
+
+    public function hasRole(string $role)
+    {
+        return in_array($role, $this->roles);
+    }
+
+    public function setRoles($roles): self
+    {
+        $this->roles = $roles;
 
         return $this;
     }
