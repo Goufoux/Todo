@@ -34,11 +34,16 @@ class AppFixtures extends Fixture
 
     public function createUser(ObjectManager $manager)
     {
-        for ($i = 0; $i <= self::NB_USER; $i++) {
+        for ($i = 0; $i < self::NB_USER; $i++) {
             $user = new User();
             $user->setEmail($this->faker->email);
             $user->setUsername($this->faker->userName);
             $user->setPassword($this->encoder->encodePassword($user, self::PASSWORD));
+            if ($i == 0) {
+                $user->setRoles(['ROLE_ADMIN']);
+            } else {
+                $user->setRoles(['ROLE_USER']);
+            }
             $manager->persist($user);
             $this->addReference("user-$i", $user);
         }
@@ -46,10 +51,13 @@ class AppFixtures extends Fixture
 
     public function createTask(ObjectManager $manager)
     {
-        for ($i = 0; $i <= self::NB_TASK; $i++) {
+        for ($i = 0; $i < self::NB_TASK; $i++) {
             $task = new Task();
             $task->setCreatedAt(new \DateTime());
             $task->setContent($this->faker->sentence());
+            if ($i > 5) {
+                $task->setAuthor($this->getReference('user-'.rand(0, (self::NB_USER-1))));
+            }
             $task->setTitle($this->faker->sentence(2));
             $manager->persist($task);
         }
