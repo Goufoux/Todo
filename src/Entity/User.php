@@ -43,7 +43,7 @@ class User implements UserInterface
     private $email;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Task", mappedBy="author")
+     * @ORM\OneToMany(targetEntity="App\Entity\Task", mappedBy="author", cascade={"remove"})
      */
     private $tasks;
 
@@ -137,11 +137,6 @@ class User implements UserInterface
         }
 
         return $this;
-    }
-
-    public function hasRole(string $role)
-    {
-        return in_array($role, $this->roles);
     }
 
     public function setRoles($roles): self
