@@ -29,12 +29,27 @@ For a general project configuration, located in the config / directory, refer to
 	- Called when a task is marked like finished or when a task is passed form completed to complete.
 - deletetaskAction()
 	- Called when a task is deleted, subtlety, each task can deleted by is author, for tasks attached to 'Anonymous user' only an admin can delete it
+
+***Optimizations to do***
+
+ - [ ] Factoring the create and edit methods
+
  
 **UserController:**
-The view's linked to ***UserController*** is accessible only by admin user.
+The view's linked to ***UserController*** is accessible only by admin users.
 - listAction():
 	- Return all users
 - createAction():
 	- Allow to create an user, the attached form is localited in **src/form/UserType.php**
 - editAction():
 	- Allow to edit an user, the attached form is localited in **src/form/UserType.php**
+
+***Optimizations to do***
+
+ - [ ] Factoring the create and edit methods
+
+# Functionalities and optimizations global
+
+ - [ ] For admin users, make a link for consult all users registered.
+ - [ ] For tests file, factorize the recovery of users and tasks
+ - [ ] Add a end date to finish a task
