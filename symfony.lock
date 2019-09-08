@@ -1,41 +1,4 @@
 {
-    "behat/behat": {
-        "version": "v3.5.0"
-    },
-    "behat/gherkin": {
-        "version": "v4.6.0"
-    },
-    "behat/mink": {
-        "version": "1.7.x-dev"
-    },
-    "behat/mink-extension": {
-        "version": "2.3.1"
-    },
-    "behat/mink-selenium2-driver": {
-        "version": "v1.3.1"
-    },
-    "behat/symfony2-extension": {
-        "version": "2.1",
-        "recipe": {
-            "repo": "github.com/symfony/recipes",
-            "branch": "master",
-            "version": "2.1",
-            "ref": "158be9d4b4c2127d9ec741c97e3cb1b6610b5294"
-        },
-        "files": [
-            "./behat.yml.dist",
-            "./config/bootstrap.php",
-            "./features/bootstrap/FeatureContext.php",
-            "./features/bootstrap/bootstrap.php",
-            "./features/demo.feature"
-        ]
-    },
-    "behat/transliterator": {
-        "version": "v1.2.0"
-    },
-    "container-interop/container-interop": {
-        "version": "1.2.0"
-    },
     "doctrine/annotations": {
         "version": "1.0",
         "recipe": {
@@ -145,17 +108,11 @@
     "egulias/email-validator": {
         "version": "2.1.11"
     },
-    "emuse/behat-html-formatter": {
-        "version": "0.1.x-dev"
-    },
     "fig/link-util": {
         "version": "1.0.0"
     },
     "fzaninotto/faker": {
         "version": "v1.8.0"
-    },
-    "instaclick/php-webdriver": {
-        "version": "1.4.5"
     },
     "jdorn/sql-formatter": {
         "version": "v1.2.17"
@@ -297,9 +254,6 @@
     },
     "symfony/cache-contracts": {
         "version": "v1.1.5"
-    },
-    "symfony/class-loader": {
-        "version": "v3.4.31"
     },
     "symfony/config": {
         "version": "v4.3.4"
