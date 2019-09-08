@@ -2,7 +2,8 @@
 # How to contribute to the Todo project?
 
 - Find all the useful files and their roles to contribute to the contribution of the project here
-- For each file, an indication on functionnalities to make is indicate
+- For each file, an indication on functionalities to make or a bug to repair is indicate
+- At the end of the file, find all the global features and optimization to perform 
 
 ## Configuration
 For a general project configuration, located in the config / directory, refer to [Symfony Documentation] (https://symfony.com/doc/current/configuration.html).
@@ -12,6 +13,7 @@ For a general project configuration, located in the config / directory, refer to
 **SecurityController:** This file handles authentication, it is linked with the file *security.yaml*.
 
 **IndexController:** He return the homepage, on the homepage a user can consulted the list of tasks to be done, and create a new task. For admin user, he can create a new user.
+
 ***Functionnality to do:***
 
  - [ ] The link "View finished tasks", doesn't work
@@ -20,11 +22,19 @@ For a general project configuration, located in the config / directory, refer to
 - listAction(); 
 	- He return all tasks (to do and finished)
 - createAction():
-	- Allows to create a task, each task created is attached to user who created.
+	- Allows to create a task, each task created is attached to user who created, the attached form is localited in **src/form/TaskType.php**
 -  editAction():
-	- Allows to update a task, the updated task stay attached to user who created.
+	- Allows to update a task, the updated task stay attached to user who created, the attached form is localited in **src/form/TaskType.php**
 - toggleTaskAction()
 	- Called when a task is marked like finished or when a task is passed form completed to complete.
 - deletetaskAction()
 	- Called when a task is deleted, subtlety, each task can deleted by is author, for tasks attached to 'Anonymous user' only an admin can delete it
  
+**UserController:**
+The view's linked to ***UserController*** is accessible only by admin user.
+- listAction():
+	- Return all users
+- createAction():
+	- Allow to create an user, the attached form is localited in **src/form/UserType.php**
+- editAction():
+	- Allow to edit an user, the attached form is localited in **src/form/UserType.php**
