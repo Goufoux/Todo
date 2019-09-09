@@ -6,6 +6,7 @@
 Please, before to create an issue, check if similar issue is not in progress or closed. If the issue is in progress, add a comment
 ### For an issue:
 - Choose a clear and precise title to easily identify the problem
+- Choose a label to visually indicate what is the type of problem
 - Indicate all the steps necessary to reproduce the problem
 - If you can, provide screenshots that show the problem encountered
 - Indicate the type of device you are using, the browser and its version
@@ -22,8 +23,8 @@ Please read and follow this part for submit a pull request:
 - Commit our change in the master branch and check if the change is good
 - Push our new branch back up to our GitHub fork
 - If your code need change we let a comment in the discussion section for what you need to do in order to get your change accepted 
-- - 
-*When you make pull request, a review is affected by our team to make sure your code don't broke nothing on the project *
+
+*When you make pull request, a review is affected by our team to make sure your code don't broke nothing on the project*
 
 ## Conduct Code
 
