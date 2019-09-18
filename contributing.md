@@ -26,6 +26,10 @@ Please read and follow this part for submit a pull request:
 
 *When you make pull request, a review is affected by our team to make sure your code don't broke nothing on the project*
 
+## How features are merged ?
+This image explain the principle of how branch are created and how are merged :
+![how features are merged](https://buddy.works/blog/images/gitflow.png)
+
 ## Conduct Code
 
 - Please respect the PSR when you submitted a pull request, else your contributing risk, to be rejected -> follow the guide : [https://www.php-fig.org/psr/](https://www.php-fig.org/psr/)
