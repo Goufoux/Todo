@@ -92,7 +92,7 @@ class TaskController extends AbstractController
      */
     public function deleteTaskAction(Task $task)
     {
-        if (null === $task->getAuthor() && false === $this->security->isGranted('ROLE_ADMIN') || $task->getAuthor() !== $this->getUser()) {
+        if ((null === $task->getAuthor() && false === $this->security->isGranted('ROLE_ADMIN')) || ($task->getAuthor() !== $this->getUser() && null !== $task->getAuthor())) {
             throw new AccessDeniedHttpException("Vous n'avez pas l'autorisation pour supprimer cette tâche");
         }
 
